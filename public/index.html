@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restoran Deneyim Formu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+    <div class="bg-overlay"></div>
+    <div class="container">
+        <div class="form-card">
+            <div class="header">
+                <img src="logo.png" alt="Restoran Logosu" class="restoran-logo">
+                <p class="restoran-adres"><i class="fas fa-map-marker-alt"></i>Dilek Pastanesi İstanbul Başakşehir 1.Etap Şubesi</p>
+                <h1>Deneyiminizi Puanlayın</h1>
+                <p>Fikirleriniz bizim için çok değerli.</p>
+            </div>
+
+            <form id="feedbackForm">
+                <div class="input-group">
+                    <i class="fas fa-user input-icon"></i>
+                    <input type="text" id="fullname" placeholder="Adınız Soyadınız (İsteğe bağlı)">
+                </div>
+
+                <div class="rating-section">
+                    <p class="section-title">Yemek Kalitesi</p>
+                    <div class="radio-grid">
+                        <label class="radio-item"><input type="radio" name="food_quality" value="Harika" required><span>Harika</span></label>
+                        <label class="radio-item"><input type="radio" name="food_quality" value="İyi"><span>İyi</span></label>
+                        <label class="radio-item"><input type="radio" name="food_quality" value="Ortalama"><span>Ortalama</span></label>
+                        <label class="radio-item"><input type="radio" name="food_quality" value="Tatmin Edici Değil"><span>Zayıf</span></label>
+                    </div>
+                </div>
+
+                <div class="rating-section">
+                    <p class="section-title">Servis Kalitesi</p>
+                    <div class="radio-grid">
+                        <label class="radio-item"><input type="radio" name="service_quality" value="Harika" required><span>Harika</span></label>
+                        <label class="radio-item"><input type="radio" name="service_quality" value="İyi"><span>İyi</span></label>
+                        <label class="radio-item"><input type="radio" name="service_quality" value="Ortalama"><span>Ortalama</span></label>
+                        <label class="radio-item"><input type="radio" name="service_quality" value="Tatmin Edici Değil"><span>Zayıf</span></label>
+                    </div>
+                </div>
+
+                <div class="rating-section">
+                    <p class="section-title">İlgili/Güleryüz</p>
+                    <div class="radio-grid">
+                        <label class="radio-item"><input type="radio" name="staff_interest" value="Harika" required><span>Harika</span></label>
+                        <label class="radio-item"><input type="radio" name="staff_interest" value="İyi"><span>İyi</span></label>
+                        <label class="radio-item"><input type="radio" name="staff_interest" value="Ortalama"><span>Ortalama</span></label>
+                        <label class="radio-item"><input type="radio" name="staff_interest" value="Tatmin Edici Değil"><span>Zayıf</span></label>
+                    </div>
+                </div>
+
+                <div class="rating-section">
+                    <p class="section-title">Sipariş Doğruluğu</p>
+                    <div class="radio-grid">
+                        <label class="radio-item"><input type="radio" name="order_accuracy" value="Harika" required><span>Harika</span></label>
+                        <label class="radio-item"><input type="radio" name="order_accuracy" value="İyi"><span>İyi</span></label>
+                        <label class="radio-item"><input type="radio" name="order_accuracy" value="Ortalama"><span>Ortalama</span></label>
+                        <label class="radio-item"><input type="radio" name="order_accuracy" value="Tatmin Edici Değil"><span>Zayıf</span></label>
+                    </div>
+                </div>
+
+                <div class="rating-section">
+                    <p class="section-title">Servis Hızı</p>
+                    <div class="radio-grid">
+                        <label class="radio-item"><input type="radio" name="service_speed" value="Harika" required><span>Harika</span></label>
+                        <label class="radio-item"><input type="radio" name="service_speed" value="İyi"><span>İyi</span></label>
+                        <label class="radio-item"><input type="radio" name="service_speed" value="Ortalama"><span>Ortalama</span></label>
+                        <label class="radio-item"><input type="radio" name="service_speed" value="Tatmin Edici Değil"><span>Zayıf</span></label>
+                    </div>
+                </div>
+
+                <div class="rating-section">
+                    <p class="section-title">Bilgilendirme</p>
+                    <div class="radio-grid">
+                        <label class="radio-item"><input type="radio" name="information" value="Harika" required><span>Harika</span></label>
+                        <label class="radio-item"><input type="radio" name="information" value="İyi"><span>İyi</span></label>
+                        <label class="radio-item"><input type="radio" name="information" value="Ortalama"><span>Ortalama</span></label>
+                        <label class="radio-item"><input type="radio" name="information" value="Tatmin Edici Değil"><span>Zayıf</span></label>
+                    </div>
+                </div>
+
+                <div class="rating-section">
+                    <p class="section-title">Lezzet</p>
+                    <div class="radio-grid">
+                        <label class="radio-item"><input type="radio" name="taste" value="Harika" required><span>Harika</span></label>
+                        <label class="radio-item"><input type="radio" name="taste" value="İyi"><span>İyi</span></label>
+                        <label class="radio-item"><input type="radio" name="taste" value="Ortalama"><span>Ortalama</span></label>
+                        <label class="radio-item"><input type="radio" name="taste" value="Tatmin Edici Değil"><span>Zayıf</span></label>
+                    </div>
+                </div>
+
+                <div class="rating-section">
+                    <p class="section-title">Çeşitlilik</p>
+                    <div class="radio-grid">
+                        <label class="radio-item"><input type="radio" name="variety" value="Harika" required><span>Harika</span></label>
+                        <label class="radio-item"><input type="radio" name="variety" value="İyi"><span>İyi</span></label>
+                        <label class="radio-item"><input type="radio" name="variety" value="Ortalama"><span>Ortalama</span></label>
+                        <label class="radio-item"><input type="radio" name="variety" value="Tatmin Edici Değil"><span>Zayıf</span></label>
+                    </div>
+                </div>
+
+                <div class="rating-section">
+                    <p class="section-title">Temizlik</p>
+                    <div class="radio-grid">
+                        <label class="radio-item"><input type="radio" name="cleanliness" value="Harika" required><span>Harika</span></label>
+                        <label class="radio-item"><input type="radio" name="cleanliness" value="İyi"><span>İyi</span></label>
+                        <label class="radio-item"><input type="radio" name="cleanliness" value="Ortalama"><span>Ortalama</span></label>
+                        <label class="radio-item"><input type="radio" name="cleanliness" value="Tatmin Edici Değil"><span>Zayıf</span></label>
+                    </div>
+                </div>
+
+                <div class="rating-section">
+                    <p class="section-title">Ortam</p>
+                    <div class="radio-grid">
+                        <label class="radio-item"><input type="radio" name="ambiance" value="Harika" required><span>Harika</span></label>
+                        <label class="radio-item"><input type="radio" name="ambiance" value="İyi"><span>İyi</span></label>
+                        <label class="radio-item"><input type="radio" name="ambiance" value="Ortalama"><span>Ortalama</span></label>
+                        <label class="radio-item"><input type="radio" name="ambiance" value="Tatmin Edici Değil"><span>Zayıf</span></label>
+                    </div>
+                </div>
+
+                <div class="rating-section">
+                    <p class="section-title">Müzik</p>
+                    <div class="radio-grid">
+                        <label class="radio-item"><input type="radio" name="music" value="Harika" required><span>Harika</span></label>
+                        <label class="radio-item"><input type="radio" name="music" value="İyi"><span>İyi</span></label>
+                        <label class="radio-item"><input type="radio" name="music" value="Ortalama"><span>Ortalama</span></label>
+                        <label class="radio-item"><input type="radio" name="music" value="Tatmin Edici Değil"><span>Zayıf</span></label>
+                    </div>
+                </div>
+
+                <div class="rating-section stars-container-center">
+    <p class="section-title general-rating-title">Genel Değerlendirme</p>
+    <div class="stars">
+        <i class="fas fa-star" data-value="1"></i>
+        <i class="fas fa-star" data-value="2"></i>
+        <i class="fas fa-star" data-value="3"></i>
+        <i class="fas fa-star" data-value="4"></i>
+        <i class="fas fa-star" data-value="5"></i>
+    </div>
+</div>
+
+                <div class="input-group">
+                    <textarea id="message" rows="4" placeholder="Öneri ve görüşlerinizi buraya yazabilirsiniz..."></textarea>
+                </div>
+
+                <button type="submit" id="submitBtn">
+                    Gönder <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

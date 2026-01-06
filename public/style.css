@@ -1,0 +1,227 @@
+/* --- GENEL AYARLAR --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Arka Plan Resmi ve Karartma */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                      url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=1920&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: #2c3e50;
+    padding: 20px;
+}
+
+/* --- FORM KARTI --- */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    width: 100%;
+    max-width: 500px; /* Genişliği biraz artırdım ki yan yana sığsınlar */
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.header h1 {
+    font-family: 'Playfair Display', serif;
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.header p {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+}
+
+/* --- INPUT VE TEXTAREA --- */
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #c0392b;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+textarea {
+    padding: 12px 15px;
+    resize: none;
+    height: 100px;
+}
+
+input:focus, textarea:focus {
+    border-color: #c0392b;
+    outline: none;
+    box-shadow: 0 0 8px rgba(192, 57, 43, 0.1);
+}
+
+/* --- SEÇENEKLERİ YAN YANA DİZEN KODLAR (EKSİK OLAN KISIM BURASIYDI) --- */
+.rating-section {
+    margin-bottom: 20px;
+    text-align: left; /* Başlıklar sola yaslı dursun */
+}
+
+.section-title {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.radio-grid {
+    display: flex;
+    flex-wrap: wrap; /* Mobilde sığmazsa alt satıra geçsin */
+    gap: 10px;
+}
+
+.radio-item {
+    flex: 1; /* Hepsi eşit genişlikte olsun */
+    min-width: 80px; /* Çok küçülmesinler */
+    cursor: pointer;
+}
+
+/* Standart yuvarlak radyo butonunu gizle */
+.radio-item input {
+    display: none;
+}
+
+/* Buton Görünümü Veren Kısım */
+.radio-item span {
+    display: block;
+    padding: 10px;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 13px;
+    color: #555;
+    transition: all 0.3s ease;
+}
+
+/* Fare ile üzerine gelince */
+.radio-item:hover span {
+    background: #e9ecef;
+    border-color: #ced4da;
+}
+
+/* SEÇİLDİĞİNDE (Kırmızı olsun) */
+.radio-item input:checked + span {
+    background: #c0392b; /* Pastane kırmızısı */
+    color: white;
+    border-color: #a93226;
+    box-shadow: 0 4px 10px rgba(192, 57, 43, 0.3);
+    transform: translateY(-2px);
+}
+
+/* --- GÖNDER BUTONU --- */
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #c0392b;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #a93226;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(192, 57, 43, 0.3);
+}
+
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+/* --- YENİ YILDIZ VE ORTALAMA STİLLERİ --- */
+
+/* Genel Değerlendirme Başlığı için özel stil */
+.general-rating-title {
+    color: #c0392b !important; /* Kırmızı renk */
+    font-size: 1.2rem !important;
+    margin-bottom: 15px;
+}
+
+/* Yıldızları ve başlığı ortalamak için özel kapsayıcı */
+.stars-container-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Yatayda ortala */
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    border-top: 2px dashed #eee; /* Üstüne şık bir ayraç çizgisi */
+}
+
+/* Yıldızların sıralandığı kutu */
+.stars {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Yıldızlar arası boşluk arttı */
+}
+
+/* Yıldız İkonlarının Kendisi */
+.stars i {
+    font-size: 2.5rem; /* Boyutları belirgin şekilde büyüdü */
+    color: #d1d5db;  /* Varsayılan renk daha koyu bir gri oldu (seçilmediği belli olsun) */
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Yaylanma efekti */
+}
+
+/* Fare ile üzerine gelince büyüme efekti */
+.stars i:hover {
+    transform: scale(1.2); /* Biraz daha fazla büyüsün */
+    color: #e5e7eb; /* Hafifçe aydınlansın */
+}
+
+/* SEÇİLİNCE (AKTİF DURUM) - BURASI ÇOK ÖNEMLİ */
+.stars i.active {
+    color: #f59e0b !important; /* Çok canlı, doygun bir altın/turuncu rengi */
+    /* Parlama efekti (Drop Shadow) */
+    filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.6)); 
+    transform: scale(1.1); /* Seçili olanlar hafif büyük dursun */
+}
