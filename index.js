@@ -24,6 +24,7 @@ const FeedbackSchema = new mongoose.Schema({
     fullname: String,
     
     // Detaylı Kategoriler (Radio Butonlar)
+    welcome_farewell: String,
     food_quality: String,     // Yemek Kalitesi
     service_quality: String,  // Servis Kalitesi
     staff_interest: String,   // İlgili/Güleryüz
@@ -31,7 +32,6 @@ const FeedbackSchema = new mongoose.Schema({
     service_speed: String,    // Servis Hızı
     information: String,      // Bilgilendirme
     taste: String,            // Lezzet
-    variety: String,          // Çeşitlilik
     cleanliness: String,      // Temizlik
     ambiance: String,         // Ortam
     music: String,            // Müzik
