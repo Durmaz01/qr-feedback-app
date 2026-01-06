@@ -225,3 +225,10 @@ button:disabled {
     filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.6)); 
     transform: scale(1.1); /* Seçili olanlar hafif büyük dursun */
 }
+
+.restoran-logo {
+    max-width: 200px;  /* <-- BURAYI DEĞİŞTİRECEĞİZ */
+    height: auto;
+    display: block;
+    margin: 0 auto 15px auto;
+}
