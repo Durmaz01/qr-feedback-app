@@ -232,3 +232,22 @@ button:disabled {
     display: block;
     margin: 0 auto 15px auto;
 }
+
+/* --- TELEFON KUTUSU DÜZELTME --- */
+
+/* Telefon (tel) kutusunu İsim (text) kutusuyla eşitle */
+input[type="tel"] {
+     width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+/* Kutuya tıklayınca (Focus) oluşacak efekt */
+input[type="tel"]:focus {
+    border-color: #c0392b; /* Dilek Pastanesi Kırmızısı */
+    box-shadow: 0 4px 10px rgba(192, 57, 43, 0.1); /* Hafif gölge */
+}

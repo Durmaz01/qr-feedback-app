@@ -31,6 +31,7 @@ document.getElementById('feedbackForm').addEventListener('submit', async (e) => 
 
     const formData = {
         fullname: document.getElementById('fullname').value || 'Anonim',
+        phone: document.getElementById('phone').value || "Belirtilmedi",
         food_quality: getVal('food_quality'),
         welcome_farewell: getVal('welcome_farewell'),
         service_quality: getVal('service_quality'),
@@ -76,4 +77,23 @@ document.getElementById('feedbackForm').addEventListener('submit', async (e) => 
         submitBtn.innerHTML = originalBtnText;
         submitBtn.disabled = false;
     }
+});
+
+/* --- TELEFON NUMARASI KISITLAMASI --- */
+document.getElementById('phone').addEventListener('input', function (e) {
+    // 1. Sadece rakamları al, harfleri ve boşlukları sil
+    var x = this.value.replace(/\D/g, '');
+    
+    // 2. Başında '0' yoksa ve veri giriliyorsa otomatik '0' ekle (Opsiyonel, istersen silebilirsin)
+    // if (x.length > 0 && x[0] !== '0') {
+    //     x = '0' + x;
+    // }
+
+    // 3. Maksimum 11 karaktere izin ver (05XX XXX XX XX)
+    if (x.length > 11) {
+        x = x.slice(0, 11);
+    }
+
+    // 4. Temizlenmiş veriyi geri yaz
+    this.value = x;
 });

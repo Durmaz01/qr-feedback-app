@@ -122,7 +122,7 @@
 
     <script>
         const sifre = prompt("Yönetici Şifresi:");
-        if (sifre !== "restoran2025") { window.location.href = "index.html"; }
+        if (sifre !== "Dilek123") { window.location.href = "index.html"; }
 
         let tumVeriler = []; // Tüm verileri burada tutacağız
 
@@ -167,7 +167,15 @@
                     <div class="feedback-item">
                         <div class="feedback-header">
                             <div class="user-meta">
-                                <h4>${item.fullname || 'İsimsiz'} ${item.fullname?'':'<span style="font-size:0.7rem; background:#eee; padding:2px 5px; border-radius:4px;">Anonim</span>'}</h4>
+                                <h4>
+                     ${item.fullname || 'İsimsiz'} 
+                     ${item.fullname?'':'<span style="font-size:0.7rem; background:#eee; padding:2px 5px; border-radius:4px;">Anonim</span>'}
+    
+                             <span style="font-size:0.85rem; color:#666; background:#f8f9fa; padding:2px 8px; border-radius:5px; border:1px solid #eee; font-family: monospace;">
+                               <i class="fas fa-phone" style="color:#c0392b; font-size:0.8rem;"></i> 
+                                  ${(item.phone || 'Yok').replace(/(\d{4})(\d{3})(\d{2})(\d{2})/, '$1 $2 $3 $4')}
+                                 </span>
+                                  </h4>
                                 <div class="feedback-date"><i class="far fa-clock"></i> ${formattedDate}</div>
                             </div>
                             <div class="star-rating">${generateStars(item.general_star_rating||0)}</div>
